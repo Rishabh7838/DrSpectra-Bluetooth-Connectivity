@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeviceListActivity">
+
+    <!--<android.support.v7.widget.CardView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:cardBackgroundColor="">-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Last Update : "-->
+            <!--android:textSize="20sp"-->
+            <!--android:textStyle="bold|italic"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:layout_gravity="center_horizontal"/>-->
+    <!--</android.support.v7.widget.CardView>-->
+
+
+    <Button
+        android:id="@+id/pairedDeviceButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="View bluetooth device list"
+        android:textColor="@android:color/white"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_1_circle_bg"
+        android:padding="5dp"
+        android:textStyle="bold"
+        />
+
+<android.support.v7.widget.CardView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardElevation="6dp"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="#e9e9e9">
+    <ListView
+        android:id="@+id/deviceListLV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+</android.support.v7.widget.CardView>
+</RelativeLayout>
