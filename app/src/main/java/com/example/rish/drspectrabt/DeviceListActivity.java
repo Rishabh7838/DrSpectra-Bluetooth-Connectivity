@@ -28,7 +28,7 @@ import java.util.Set;
 
 public class DeviceListActivity extends AppCompatActivity {
 
-    Button pairedDevice;
+    Button pairedDeviceButton;
     ListView deviceList;
     private BluetoothAdapter myBluetooth = null;
     private Set<BluetoothDevice> pairedDevices;
@@ -59,21 +59,21 @@ public class DeviceListActivity extends AppCompatActivity {
         }
 
         deviceList = findViewById(R.id.deviceListLV);
-        pairedDevice = findViewById(R.id.pairedDeviceButton);
-        pairedDevice.setEnabled(false);
-        checkUpdate();
-        pairedDevice.setOnClickListener(new View.OnClickListener() {
+        pairedDeviceButton = findViewById(R.id.pairedDeviceButton);
+        //pairedDeviceButton.setEnabled(false);
+//        checkUpdate();
+        pairedDeviceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(isUpdateAvailable) {
-                    pairedDevice.setVisibility(View.GONE);
+               // if(isUpdateAvailable) {
+                    pairedDeviceButton.setVisibility(View.GONE);
                     pairedDevicesList();
                     deviceList.setVisibility(View.VISIBLE);
-                }
-                else{
-                    Toast.makeText(DeviceListActivity.this, "No update is available", Toast.LENGTH_SHORT).show();
-                }
+               // }
+//                else{
+//                    Toast.makeText(DeviceListActivity.this, "No update is available", Toast.LENGTH_SHORT).show();
+//                }
 
             }
         });
@@ -82,27 +82,27 @@ public class DeviceListActivity extends AppCompatActivity {
 
     }
 
-    private void checkUpdate() {
-
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Device_Details")
-                .child("198675");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                query = dataSnapshot.child("Query").getValue().toString();
-                updateDate = dataSnapshot.child("updation_time").getValue().toString();
-                setTitle("Last Updated :"+updateDate);
-                isUpdateAvailable = true;
-               // pairedDevice.setBackgroundColor(getResources().getColor(R.color.orange));
-                pairedDevice.setEnabled(true);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
+//    private void checkUpdate() {
+//
+//        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Device_Details")
+//                .child("198675");
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                query = dataSnapshot.child("Query").getValue().toString();
+//                updateDate = dataSnapshot.child("updation_time").getValue().toString();
+//                setTitle("Last Updated :"+updateDate);
+//                isUpdateAvailable = true;
+//               // pairedDevice.setBackgroundColor(getResources().getColor(R.color.orange));
+//                pairedDevice.setEnabled(true);
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
 
     private void pairedDevicesList() {
 
@@ -116,7 +116,7 @@ public class DeviceListActivity extends AppCompatActivity {
                 if(bt.getName().contains("HC"))
                 list.add("Tinnitus Device \n"+bt.getAddress());
                 else
-                    list.add(bt.getName());
+                    list.add(bt.getName()+"\n"+bt.getAddress());
                 //Get the device's name and the address
             }
         }
@@ -139,13 +139,13 @@ public class DeviceListActivity extends AppCompatActivity {
             String info = ((TextView) v).getText().toString();
             String address = info.substring(info.length() - 17);
             Log.e("address",address);
-            Log.e("query",query);
+          //  Log.e("query",query);
             // Make an intent to start next activity.
             Intent i = new Intent(DeviceListActivity.this, MainActivity.class);
 
             //Change the activity.
             i.putExtra(EXTRA_ADDRESS, address);
-            i.putExtra("Query",query+",#");
+           // i.putExtra("Query",query+",#");
             //this will be received at ledControl (class) Activity
             startActivity(i);
         }

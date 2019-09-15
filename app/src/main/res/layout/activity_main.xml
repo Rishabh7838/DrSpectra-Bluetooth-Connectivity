@@ -10,173 +10,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-<android.support.v7.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardElevation="5dp"
-    android:layout_margin="5dp"
-    android:visibility="gone">
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Frequency"
-            android:textStyle="bold"/>
-        <RadioGroup
-            android:id="@+id/frequencyRG"
+        android:layout_height="wrap_content"
+        app:cardElevation="6dp"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="#e5e5e5"
+        >
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10dp"
             >
-            <RadioButton
-                android:id="@+id/RB11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T1"
-                android:checked="true"/>
-            <RadioButton
-                android:id="@+id/RB12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T2"/>
-            <RadioButton
-                android:id="@+id/RB13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T3"/>
-        </RadioGroup>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Ear"
-            android:textStyle="bold"/>
-
-        <RadioGroup
-            android:id="@+id/earRG"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10dp"
-
-            >
-            <RadioButton
-                android:id="@+id/RB21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Left"
-                android:checked="true"/>
-            <RadioButton
-                android:id="@+id/RB22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Right"/>
-            <RadioButton
-                android:id="@+id/RB23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Both"/>
-        </RadioGroup>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp">
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/SoundET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="" android:hint=" Enter Sound"
-                android:inputType="number"/>
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp">
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/volumeET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="" android:hint=" Enter Volume"
-                android:inputType="number"/>
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp">
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/SessionET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="" android:hint=" Enter Session"
-                android:inputType="number"/>
-        </android.support.design.widget.TextInputLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Mode"
-            android:textStyle="bold"/>
-
-        <RadioGroup
-            android:id="@+id/modeRG"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10dp"
-
-            >
-            <RadioButton
-                android:id="@+id/RB31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Diagnosis"
-                android:checked="true"/>
-            <RadioButton
-                android:id="@+id/RB32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Therapy"/>
-        </RadioGroup>
-
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp">
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/TimerET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="" android:hint=" Enter Timer"
-                android:inputType="number"/>
-        </android.support.design.widget.TextInputLayout>
-    </LinearLayout>
-</android.support.v7.widget.CardView>
-
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        android:layout_toLeftOf="@+id/loadModeButton">
         <android.support.design.widget.TextInputEditText
             android:id="@+id/patientIDET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
             android:hint=" Enter Patient ID"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:focusableInTouchMode="true"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
+
+            />
     </android.support.design.widget.TextInputLayout>
-
-
+    <Button
+        android:id="@+id/loadModeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load modes"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:background="#D3D3D3"
+        android:textColor="@android:color/black"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
     <Button
         android:id="@+id/connectBT"
         android:layout_width="120dp"
@@ -189,8 +65,130 @@
         android:padding="5dp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
-
+        android:visibility="gone"
         />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/selectModeRV"
+        android:scrollbars="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="16dp"
+        android:visibility="gone"/>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="#eeeeee"
+        >
+    <LinearLayout
+        android:id="@+id/modeLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+    <Button
+        android:id="@+id/modeTherapyButton"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="Therapy"
+        android:textColor="@android:color/white"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_3_circle_bg"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:id="@+id/modeVertigoButton"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="Vertigo"
+        android:textColor="@android:color/white"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_4_circle_bg"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/modeSleepButton"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="Sleeping Disturbances"
+        android:textColor="@android:color/white"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_5_circle_bg"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:id="@+id/modeHeadacheButton"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="Headache"
+        android:textColor="@android:color/white"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_6_circle_bg"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/modeNoiseButton"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="Noise Irritation"
+        android:textColor="@android:color/white"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_7_circle_bg"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        />
+        <Button
+            android:id="@+id/modeSoundHeadButton"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:text="Sound in back of head"
+            android:textColor="@android:color/white"
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/button_8_circle_bg"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            />
+    </LinearLayout>
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+
 </LinearLayout>
 
 </ScrollView>

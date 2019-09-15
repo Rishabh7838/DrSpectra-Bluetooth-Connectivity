@@ -10,19 +10,21 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_patient"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_patient_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon"
         >
         <activity
             android:name=".MainActivity"
-            android:label="Update here" />
+            android:label="Neuromodulation Therapy"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".DeviceListActivity"
-            android:label="Last Updated : ">
+            android:label="Patient Device "
+            android:configChanges="orientation|screenSize">>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
